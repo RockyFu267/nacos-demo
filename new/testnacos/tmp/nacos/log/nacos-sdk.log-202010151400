@@ -1,0 +1,93 @@
+2020-10-15T14:08:44.875+0800	[31mERROR[0m	api</v1/cs/configs>,method:<GET>, params:<{"dataId":"test-data","group":"test-group","tenant":"e525eafa-f7d7-4029-83d9-008937f9d468"}>, call domain error:<[404] config data not exist
+> , result:<config data not exist
+>
+2020-10-15T14:08:44.944+0800	[31mERROR[0m	[cache.ReadConfigFromFile] error: failed to read config cache file:tmp/nacos/cache\config\test-data-2@@test-group@@e525eafa-f7d7-4029-83d9-008937f9d468,err:open tmp/nacos/cache\config\test-data-2@@test-group@@e525eafa-f7d7-4029-83d9-008937f9d468: The system cannot find the file specified. 
+2020-10-15T14:08:44.950+0800	[34mINFO[0m	[client.ListenConfig] request params:map[Listening-Configs:test-data-2test-groupd41d8cd98f00b204e9800998ecf8427ee525eafa-f7d7-4029-83d9-008937f9d468test-datatest-groupfc3ff98e8c6a0d3087d515c0473f8677e525eafa-f7d7-4029-83d9-008937f9d468] header:map[Content-Type:application/x-www-form-urlencoded;charset=utf-8 Long-Pulling-Timeout:30000 Long-Pulling-Timeout-No-Hangup:true accessKey:nacos secretKey:nacos] 
+
+2020-10-15T14:08:44.988+0800	[34mINFO[0m	[client.ListenConfig] config changed:test-data-2%02test-group%02e525eafa-f7d7-4029-83d9-008937f9d468%01
+
+2020-10-15T14:08:45.024+0800	[34mINFO[0m	[client.ListenConfig] request params:map[Listening-Configs:test-data-2test-groupfc3ff98e8c6a0d3087d515c0473f8677e525eafa-f7d7-4029-83d9-008937f9d468test-datatest-groupfc3ff98e8c6a0d3087d515c0473f8677e525eafa-f7d7-4029-83d9-008937f9d468] header:map[Content-Type:application/x-www-form-urlencoded;charset=utf-8 Long-Pulling-Timeout:30000 accessKey:nacos secretKey:nacos] 
+
+2020-10-15T14:08:45.185+0800	[34mINFO[0m	[client.ListenConfig] config changed:test-data%02test-group%02e525eafa-f7d7-4029-83d9-008937f9d468%01
+
+2020-10-15T14:08:45.216+0800	[34mINFO[0m	[client.ListenConfig] request params:map[Listening-Configs:test-data-2test-groupfc3ff98e8c6a0d3087d515c0473f8677e525eafa-f7d7-4029-83d9-008937f9d468test-datatest-groupf4d11f74e7b95774cf709a27cf59183de525eafa-f7d7-4029-83d9-008937f9d468] header:map[Content-Type:application/x-www-form-urlencoded;charset=utf-8 Long-Pulling-Timeout:30000 accessKey:nacos secretKey:nacos] 
+
+2020-10-15T14:08:47.190+0800	[34mINFO[0m	[client.ListenConfig] config changed:test-data-2%02test-group%02e525eafa-f7d7-4029-83d9-008937f9d468%01
+
+2020-10-15T14:08:47.220+0800	[34mINFO[0m	[client.ListenConfig] request params:map[Listening-Configs:test-data-2test-groupf4d11f74e7b95774cf709a27cf59183de525eafa-f7d7-4029-83d9-008937f9d468test-datatest-groupf4d11f74e7b95774cf709a27cf59183de525eafa-f7d7-4029-83d9-008937f9d468] header:map[Content-Type:application/x-www-form-urlencoded;charset=utf-8 Long-Pulling-Timeout:30000 accessKey:nacos secretKey:nacos] 
+
+2020-10-15T14:08:49.133+0800	[34mINFO[0m	Cancel listen config DataId:test-data Group:test-group
+2020-10-15T14:08:51.195+0800	[34mINFO[0m	[client.ListenConfig] config changed:test-data%02test-group%02e525eafa-f7d7-4029-83d9-008937f9d468%01
+
+2020-10-15T14:08:51.205+0800	[34mINFO[0m	[client.ListenConfig] request params:map[Listening-Configs:test-data-2test-groupf4d11f74e7b95774cf709a27cf59183de525eafa-f7d7-4029-83d9-008937f9d468] header:map[Content-Type:application/x-www-form-urlencoded;charset=utf-8 Long-Pulling-Timeout:30000 accessKey:nacos secretKey:nacos] 
+
+2020-10-15T14:10:35.964+0800	[34mINFO[0m	[client.ListenConfig] request params:map[Listening-Configs:test-data-2test-groupf4d11f74e7b95774cf709a27cf59183de525eafa-f7d7-4029-83d9-008937f9d468test-datatest-groupfc3ff98e8c6a0d3087d515c0473f8677e525eafa-f7d7-4029-83d9-008937f9d468] header:map[Content-Type:application/x-www-form-urlencoded;charset=utf-8 Long-Pulling-Timeout:30000 Long-Pulling-Timeout-No-Hangup:true accessKey:nacos secretKey:nacos] 
+
+2020-10-15T14:10:36.009+0800	[34mINFO[0m	[client.ListenConfig] config changed:test-data%02test-group%02e525eafa-f7d7-4029-83d9-008937f9d468%01test-data-2%02test-group%02e525eafa-f7d7-4029-83d9-008937f9d468%01
+
+2020-10-15T14:10:36.080+0800	[34mINFO[0m	[client.ListenConfig] request params:map[Listening-Configs:test-data-2test-groupfc3ff98e8c6a0d3087d515c0473f8677e525eafa-f7d7-4029-83d9-008937f9d468test-datatest-groupf4d11f74e7b95774cf709a27cf59183de525eafa-f7d7-4029-83d9-008937f9d468] header:map[Content-Type:application/x-www-form-urlencoded;charset=utf-8 Long-Pulling-Timeout:30000 accessKey:nacos secretKey:nacos] 
+
+2020-10-15T14:10:38.110+0800	[34mINFO[0m	[client.ListenConfig] config changed:test-data-2%02test-group%02e525eafa-f7d7-4029-83d9-008937f9d468%01
+
+2020-10-15T14:10:38.140+0800	[34mINFO[0m	[client.ListenConfig] request params:map[Listening-Configs:test-data-2test-groupf4d11f74e7b95774cf709a27cf59183de525eafa-f7d7-4029-83d9-008937f9d468test-datatest-groupf4d11f74e7b95774cf709a27cf59183de525eafa-f7d7-4029-83d9-008937f9d468] header:map[Content-Type:application/x-www-form-urlencoded;charset=utf-8 Long-Pulling-Timeout:30000 accessKey:nacos secretKey:nacos] 
+
+2020-10-15T14:10:40.019+0800	[34mINFO[0m	Cancel listen config DataId:test-data Group:test-group
+2020-10-15T14:10:42.135+0800	[34mINFO[0m	[client.ListenConfig] config changed:test-data%02test-group%02e525eafa-f7d7-4029-83d9-008937f9d468%01
+
+2020-10-15T14:10:42.145+0800	[34mINFO[0m	[client.ListenConfig] request params:map[Listening-Configs:test-data-2test-groupf4d11f74e7b95774cf709a27cf59183de525eafa-f7d7-4029-83d9-008937f9d468] header:map[Content-Type:application/x-www-form-urlencoded;charset=utf-8 Long-Pulling-Timeout:30000 accessKey:nacos secretKey:nacos] 
+
+2020-10-15T14:21:55.771+0800	[34mINFO[0m	[client.ListenConfig] request params:map[Listening-Configs:test-data-2test-groupf4d11f74e7b95774cf709a27cf59183de525eafa-f7d7-4029-83d9-008937f9d468test-datatest-groupfc3ff98e8c6a0d3087d515c0473f8677e525eafa-f7d7-4029-83d9-008937f9d468] header:map[Content-Type:application/x-www-form-urlencoded;charset=utf-8 Long-Pulling-Timeout:30000 Long-Pulling-Timeout-No-Hangup:true accessKey:nacos secretKey:nacos] 
+
+2020-10-15T14:21:55.890+0800	[34mINFO[0m	[client.ListenConfig] config changed:test-data%02test-group%02e525eafa-f7d7-4029-83d9-008937f9d468%01test-data-2%02test-group%02e525eafa-f7d7-4029-83d9-008937f9d468%01
+
+2020-10-15T14:21:55.967+0800	[34mINFO[0m	[client.ListenConfig] request params:map[Listening-Configs:test-datatest-groupf4d11f74e7b95774cf709a27cf59183de525eafa-f7d7-4029-83d9-008937f9d468test-data-2test-groupfc3ff98e8c6a0d3087d515c0473f8677e525eafa-f7d7-4029-83d9-008937f9d468] header:map[Content-Type:application/x-www-form-urlencoded;charset=utf-8 Long-Pulling-Timeout:30000 accessKey:nacos secretKey:nacos] 
+
+2020-10-15T14:21:57.918+0800	[34mINFO[0m	[client.ListenConfig] config changed:test-data-2%02test-group%02e525eafa-f7d7-4029-83d9-008937f9d468%01
+
+2020-10-15T14:21:57.948+0800	[34mINFO[0m	[client.ListenConfig] request params:map[Listening-Configs:test-data-2test-groupf4d11f74e7b95774cf709a27cf59183de525eafa-f7d7-4029-83d9-008937f9d468test-datatest-groupf4d11f74e7b95774cf709a27cf59183de525eafa-f7d7-4029-83d9-008937f9d468] header:map[Content-Type:application/x-www-form-urlencoded;charset=utf-8 Long-Pulling-Timeout:30000 accessKey:nacos secretKey:nacos] 
+
+2020-10-15T14:21:59.884+0800	[34mINFO[0m	Cancel listen config DataId:test-data Group:test-group
+2020-10-15T14:28:28.727+0800	[31mERROR[0m	api</v1/cs/configs>,method:<GET>, params:<{"dataId":"test1015","group":"DEFAULT_GROUP","tenant":"e525eafa-f7d7-4029-83d9-008937f9d468"}>, call domain error:<[404] config data not exist
+> , result:<config data not exist
+>
+2020-10-15T14:28:28.755+0800	[31mERROR[0m	api</v1/cs/configs>,method:<GET>, params:<{"dataId":"test1015","group":"DEFAULT_GROUP","tenant":"e525eafa-f7d7-4029-83d9-008937f9d468"}>, call domain error:<[404] config data not exist
+> , result:<config data not exist
+>
+2020-10-15T14:28:28.772+0800	[31mERROR[0m	api</v1/cs/configs>,method:<GET>, params:<{"dataId":"test1015","group":"DEFAULT_GROUP","tenant":"e525eafa-f7d7-4029-83d9-008937f9d468"}>, call domain error:<[404] config data not exist
+> , result:<config data not exist
+>
+2020-10-15T14:28:28.772+0800	[34mINFO[0m	get config from server error:[404] config data not exist
+ 
+2020-10-15T14:32:25.685+0800	[31mERROR[0m	api</v1/cs/configs>,method:<GET>, params:<{"dataId":"test1015","group":"test","tenant":"e525eafa-f7d7-4029-83d9-008937f9d468"}>, call domain error:<[404] config data not exist
+> , result:<config data not exist
+>
+2020-10-15T14:32:25.721+0800	[31mERROR[0m	api</v1/cs/configs>,method:<GET>, params:<{"dataId":"test1015","group":"test","tenant":"e525eafa-f7d7-4029-83d9-008937f9d468"}>, call domain error:<[404] config data not exist
+> , result:<config data not exist
+>
+2020-10-15T14:32:25.739+0800	[31mERROR[0m	api</v1/cs/configs>,method:<GET>, params:<{"dataId":"test1015","group":"test","tenant":"e525eafa-f7d7-4029-83d9-008937f9d468"}>, call domain error:<[404] config data not exist
+> , result:<config data not exist
+>
+2020-10-15T14:32:25.739+0800	[34mINFO[0m	get config from server error:[404] config data not exist
+ 
+2020-10-15T14:43:38.600+0800	[31mERROR[0m	api</v1/cs/configs>,method:<GET>, params:<{"dataId":"test1015","group":"test"}>, call domain error:<[404] config data not exist
+> , result:<config data not exist
+>
+2020-10-15T14:43:38.643+0800	[31mERROR[0m	api</v1/cs/configs>,method:<GET>, params:<{"dataId":"test1015","group":"test"}>, call domain error:<[404] config data not exist
+> , result:<config data not exist
+>
+2020-10-15T14:43:38.681+0800	[31mERROR[0m	api</v1/cs/configs>,method:<GET>, params:<{"dataId":"test1015","group":"test"}>, call domain error:<[404] config data not exist
+> , result:<config data not exist
+>
+2020-10-15T14:43:38.681+0800	[34mINFO[0m	get config from server error:[404] config data not exist
+ 
+2020-10-15T14:45:52.595+0800	[31mERROR[0m	api</v1/cs/configs>,method:<GET>, params:<{"dataId":"test1015","group":"test"}>, call domain error:<[404] config data not exist
+> , result:<config data not exist
+>
+2020-10-15T14:45:52.678+0800	[31mERROR[0m	api</v1/cs/configs>,method:<GET>, params:<{"dataId":"test1015","group":"test"}>, call domain error:<[404] config data not exist
+> , result:<config data not exist
+>
+2020-10-15T14:45:52.694+0800	[31mERROR[0m	api</v1/cs/configs>,method:<GET>, params:<{"dataId":"test1015","group":"test"}>, call domain error:<[404] config data not exist
+> , result:<config data not exist
+>
+2020-10-15T14:45:52.695+0800	[34mINFO[0m	get config from server error:[404] config data not exist
+ 

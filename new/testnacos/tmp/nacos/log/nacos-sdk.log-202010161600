@@ -1,0 +1,12 @@
+2020-10-16T16:48:45.597+0800	[34mINFO[0m	[client.ListenConfig] request params:map[Listening-Configs:test1015test1bb5254cdcb08af60b72ebc96a1407aca6af0981-723d-4924-9211-e881b86e20d9] header:map[Content-Type:application/x-www-form-urlencoded;charset=utf-8 Long-Pulling-Timeout:30000 Long-Pulling-Timeout-No-Hangup:true accessKey:nacos secretKey:nacos] 
+
+2020-10-16T16:48:45.630+0800	[34mINFO[0m	[client.ListenConfig] no change
+2020-10-16T16:48:45.640+0800	[34mINFO[0m	[client.ListenConfig] request params:map[Listening-Configs:test1015test1bb5254cdcb08af60b72ebc96a1407aca6af0981-723d-4924-9211-e881b86e20d9] header:map[Content-Type:application/x-www-form-urlencoded;charset=utf-8 Long-Pulling-Timeout:30000 accessKey:nacos secretKey:nacos] 
+
+2020-10-16T16:49:03.953+0800	[34mINFO[0m	[client.ListenConfig] config changed:test1015%02test%02a6af0981-723d-4924-9211-e881b86e20d9%01
+
+2020-10-16T16:49:04.002+0800	[34mINFO[0m	[client.ListenConfig] request params:map[Listening-Configs:test1015test20a694c28c2dc228f2e22ba58ba32f79a6af0981-723d-4924-9211-e881b86e20d9] header:map[Content-Type:application/x-www-form-urlencoded;charset=utf-8 Long-Pulling-Timeout:30000 accessKey:nacos secretKey:nacos] 
+
+2020-10-16T16:49:33.531+0800	[34mINFO[0m	[client.ListenConfig] no change
+2020-10-16T16:49:33.541+0800	[34mINFO[0m	[client.ListenConfig] request params:map[Listening-Configs:test1015test20a694c28c2dc228f2e22ba58ba32f79a6af0981-723d-4924-9211-e881b86e20d9] header:map[Content-Type:application/x-www-form-urlencoded;charset=utf-8 Long-Pulling-Timeout:30000 accessKey:nacos secretKey:nacos] 
+
