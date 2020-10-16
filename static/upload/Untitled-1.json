@@ -1,0 +1,147 @@
+{
+	"pipelineResourceInput": {
+		"gitMetadataJSON": {
+			"name": "test03111531-git",
+			"namespace": "test01",
+			"resourceVersion": ""
+		},
+		"gitResourceSpecJSON": {
+			"params": [{
+				"name": "revision",
+				"value": "master"
+			}, {
+				"name": "url",
+				"value": "http://git.tutorabc.com/CMSERVICE/testdemo.git"
+			}],
+			"type": "git"
+		},
+		"imageMetadataJSON ": {
+			"name": "test03111531-image",
+			"namespace": "test01",
+			"resourceVersion": ""
+		},
+		"imageResourceSpecJSON": {
+			"params": [{
+				"name": "url",
+				"value": "devops-hub.tutorabc.com.cn/library/javademo:201903111531"
+			}],
+			"type": "image"
+		}
+	},
+	"taskJSONInput": {
+		"taskJSONMetadataJSON": {
+			"name": "test03111531-task",
+			"namespace": "test01",
+			"resourceVersion": ""
+		},
+		"taskJSONSpecJSON": {
+			"inputs": {
+				"params": [{
+					"default": "/workspace/javamvn-test/Dockerfile",
+					"description": "The path to the dockerfile to build",
+					"name": "pathToDockerFile",
+					"type": "string"
+				}, {
+					"default": "/workspace/javamvn-test",
+					"description": "The build context used by Kaniko (https://github.com/GoogleContainerTools/kaniko#kaniko-build-contexts)",
+					"name": "pathToContext",
+					"type": "string"
+				}],
+				"resources": [{
+					"name": "test03111531",
+					"type": "git"
+				}]
+			},
+			"outputs": {
+				"resources": [{
+					"name": "test03111531",
+					"type": "image"
+				}]
+			},
+			"steps": [{
+				"args": ["clean", "install"],
+				"command": ["mvn"],
+				"env": null,
+				"image": "devops-hub.tutorabc.com.cn/library/jenkins-slave-maven:3.3.9-jdk-8-alpine",
+				"name": "test03111531-step1",
+				"volumeMounts": [{
+					"mountPath": "/root/.m2",
+					"name": "shit-volumes"
+				}],
+				"workingDir": "/workspace/test03111531"
+			}, {
+				"args": ["--dockerfile=$(inputs.params.pathToDockerFile)", "--destination=$(outputs.resources.test03111531.url)", "--context=$(inputs.params.pathToContext)", "--oci-layout-path=/workspace/output/builtImage/"],
+				"command": ["/kaniko/executor"],
+				"env": [{
+					"name": "DOCKER_CONFIG",
+					"value": "/tekton/home/.docker/"
+				}],
+				"image": "devops-hub.tutorabc.com.cn/library/executor:20191128",
+				"name": "test03111531-step2",
+				"volumeMounts": null,
+				"workingDir": ""
+			}, {
+				"args": ["w", "-i", "-d1", "k8s-demo-tekton.yaml", "spec.template.spec.containers[0].image", "devops-hub.tutorabc.com.cn/library/javademo:201903111531"],
+				"command": ["yq"],
+				"env": null,
+				"image": "devops-hub.tutorabc.com.cn/library/yq:20191225",
+				"name": "replace-image",
+				"volumeMounts": null,
+				"workingDir": "/workspace/test03111531"
+			}, {
+				"args": ["apply", "-f", "/workspace/test03111531/k8s-demo-tekton.yaml", "-n", "test01"],
+				"command": ["kubectl"],
+				"env": null,
+				"image": "devops-hub.tutorabc.com.cn/library/jenkins-slave-kubectl:1.11.5",
+				"name": "test03111531-step3",
+				"volumeMounts": null,
+				"workingDir": ""
+			}]
+		}
+	},
+	"taskRunJSONInput": {
+		"taskRunJSONInputMetadataJSON": {
+			"name": "test03111531-taskrun",
+			"namespace": "test01",
+			"resourceVersion": ""
+		},
+		"taskRunJSONINputeSpecJSON": {
+			"inputs": {
+				"params": [{
+					"name": "pathToDockerFile",
+					"value": "/workspace/test03111531/Dockerfile"
+				}, {
+					"name": "pathToContext",
+					"value": "/workspace/test03111531"
+				}],
+				"resources": [{
+					"name": "test03111531",
+					"resourceRef": {
+						"name": "test03111531-git"
+					}
+				}]
+			},
+			"outputs": {
+				"resources": [{
+					"name": "test03111531",
+					"resourceRef": {
+						"name": "test03111531-image"
+					}
+				}]
+			},
+			"serviceAccountName": "test01",
+			"taskRef": {
+				"kind": "",
+				"name": "test03111531-task"
+			},
+			"podTemplate": {
+				"volumes": [{
+					"name": "shit-volumes",
+					"persistentVolumeClaim": {
+						"claimName": "test01-claim"
+					}
+				}]
+			}
+		}
+	}
+}
