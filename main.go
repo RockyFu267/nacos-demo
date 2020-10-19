@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	PUB "jaegerdemo/pubilc"
 	_ "jaegerdemo/routers"
 
 	"github.com/astaxie/beego"
@@ -9,8 +10,6 @@ import (
 	"github.com/nacos-group/nacos-sdk-go/common/constant"
 	"github.com/nacos-group/nacos-sdk-go/vo"
 )
-
-var ConfigNacos string
 
 func main() {
 	sc := []constant.ServerConfig{
@@ -43,7 +42,7 @@ func main() {
 	})
 
 	if err != nil {
-		panic(err)
+		beego.Error(err)
 	}
 
 	//get config
@@ -52,7 +51,7 @@ func main() {
 		Group:  "test",
 	})
 	fmt.Println("GetConfig,config :" + content)
-	ConfigNacos = content
+	PUB.ConfigNacos = content
 	//Listen config change,key=dataId+group+namespaceId.
 	err = client.ListenConfig(vo.ConfigParam{
 		DataId: "test1015",
@@ -60,7 +59,7 @@ func main() {
 		OnChange: func(namespace, group, dataId, data string) {
 			//OnChange: func("a6af0981-723d-4924-9211-e881b86e20d9", "test", "test1015", content) {
 			fmt.Println("config changed group:" + group + ", dataId:" + dataId + ", content:" + data)
-			ConfigNacos = data
+			PUB.ConfigNacos = data
 		},
 	})
 	beego.Run()

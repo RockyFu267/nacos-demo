@@ -5,6 +5,7 @@ import (
 	"errors"
 	"fmt"
 	"io/ioutil"
+	PUB "jaegerdemo/pubilc"
 	"net"
 	"net/http"
 
@@ -43,8 +44,19 @@ func (p *TestDemoController) Demo() {
 	A = A + ":" + IPTMP
 	returnData.Data = append(returnData.Data, A)
 
-	testURL := "aa.testxiao.svc.cluster.local"
-	url := "http://" + testURL + "/demo/"
+	//testURL := "aa.testxiao.svc.cluster.local"
+	//testURL := PUB.ConfigNacos
+	jsonData, err := PUB.ReJsonNacosCon(PUB.ConfigNacos)
+	if err != nil {
+		beego.Error("Get ERROR", " ")
+		p.Data["json"] = returnData
+		p.Ctx.Output.JSON(returnData, true, true)
+		return
+	}
+	//debug
+	fmt.Println(jsonData.URLB)
+	//
+	url := "http://" + jsonData.URLB + "/demo/"
 
 	req, err := http.NewRequest("GET", url, nil)
 	req.Header.Add("Content-Type", "application/json;charset=UTF-8")
